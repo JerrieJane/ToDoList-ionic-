@@ -1,0 +1,28 @@
+
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+@Component({
+    selector: 'page-home',
+    templateUrl: 'index.html'
+})
+export class HomePage {
+    todos: string[] = [];
+    todo: string;
+
+    constructor(public navCtrl: NavController) {
+
+    }
+
+    add() {
+        this.todos.push(this.todo);
+        this.todo = "";
+    }
+
+    delete(item) {
+        var index = this.todos.indexOf(item, 0);
+        if (index > -1) {
+            this.todos.splice(index, 1);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mobile To-Do List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <p>
+    Simpliest Ionic To-Do List Mobile Application 
+  </p>
+  <input type="" name="">
+  <button>Add</button>
+</ion-content>
+ -->
+
+<ion-header>
+	<ion-navbar>
+	<ion-title>
+	To-Do List
+	</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-item>
+	<ion-input [(ngModel)]="todo" placeholder="ADD SOMETHING" type="text"></ion-input>
+	</ion-item>
+	<button ion-button full (click)="add()">Add to List</button>
+	<ion-list>
+	<ion-item-sliding *ngFor="let x of todos">
+	<ion-item>
+	{{x}}
+	</ion-item>
+	<ion-item-options side="right">
+	<button ion-button color="danger" (click)="delete(t)">
+	<ion-icon name="trash"></ion-icon> Delete from List</button>
+	</ion-item-options>
+	</ion-item-sliding>
+	</ion-list>
+</ion-content>
